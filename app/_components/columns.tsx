@@ -1,11 +1,36 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { type ColumnDef } from "@tanstack/react-table";
+import { type ColumnDef, Row } from "@tanstack/react-table";
 import { labels, priorities, statuses } from "../_constants/metadata";
 import { type Task } from "../_constants/schema";
+import { CheckboxIcon, BoxIcon } from "@radix-ui/react-icons";
+import { useState } from "react";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export const columns: Array<ColumnDef<Task>> = [
+    {
+        accessorKey: "checkBox",
+        header: ({ column }) => (
+            <span>
+                <CheckboxIcon></CheckboxIcon>
+            </span>
+        ),
+        cell: ({ row }) => {
+            return(
+                <div className="w-4">
+                {/* <Checkbox 
+                checked={row.getIsSelected()} 
+                onChange={row.getToggleSelectedHandler()} 
+                /> */}
+                <input type="checkbox" 
+                checked={row.getIsSelected()} 
+                onChange={row.getToggleSelectedHandler()} 
+                ></input>
+            </div>
+            )
+        },
+    },
     {
         accessorKey: "id",
         header: ({ column }) => <span>Task</span>,
