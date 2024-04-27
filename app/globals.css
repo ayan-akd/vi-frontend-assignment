@@ -86,6 +86,34 @@
     background-color: rgb(229 231 235 / var(--tw-bg-opacity))
 }
 
-/* .data-table .TableRow[data-state="selected"] {
+.data-table thead tr:hover th.sticky {
     background-color: rgb(229 231 235 / var(--tw-bg-opacity))
-  } */
+}
+
+.data-table thead tr:hover th.sticky:hover {
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity))
+}
+
+
+
+  td {
+    position: relative;
+  }
+  .resizer {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    -webkit-user-select: none;
+    touch-action: none;
+    cursor: col-resize;
+  }
+
+  .resizer.isResizing {
+    background-color: gray
+  }
+
+  .header-hover-bg:hover {
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity))
+  }

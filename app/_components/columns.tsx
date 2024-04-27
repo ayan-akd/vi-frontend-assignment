@@ -5,8 +5,6 @@ import { type ColumnDef, Row } from "@tanstack/react-table";
 import { labels, priorities, statuses } from "../_constants/metadata";
 import { type Task } from "../_constants/schema";
 import { CheckboxIcon, BoxIcon } from "@radix-ui/react-icons";
-import { useState } from "react";
-import { Checkbox } from "@/components/ui/checkbox";
 
 export const columns: Array<ColumnDef<Task>> = [
     {
@@ -19,10 +17,6 @@ export const columns: Array<ColumnDef<Task>> = [
         cell: ({ row }) => {
             return(
                 <div className="w-4">
-                {/* <Checkbox 
-                checked={row.getIsSelected()} 
-                onChange={row.getToggleSelectedHandler()} 
-                /> */}
                 <input type="checkbox" 
                 checked={row.getIsSelected()} 
                 onChange={row.getToggleSelectedHandler()} 
