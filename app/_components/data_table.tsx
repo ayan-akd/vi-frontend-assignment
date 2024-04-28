@@ -17,7 +17,7 @@ import {
     useReactTable,
 } from "@tanstack/react-table";
 import { DataTablePagination } from "./data-table-pagination";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[];
@@ -39,26 +39,7 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
         enableMultiRowSelection: false,
         columnResizeMode: "onChange",
     });
-    // useEffect(() => {
-    //     const updateStickyColumns = () => {
-    //         const firstColumn = document.querySelector(".data-table .sticky.left-0") as HTMLElement;
-    //         if (firstColumn) {
-    //             const firstColumnWidth = firstColumn.getBoundingClientRect().width;
-    //             const stickyColumns = document.querySelectorAll(".data-table .sticky.left-12");
-    //             stickyColumns.forEach((column: Element) => {
-    //                 (column as HTMLElement).style.left = `${firstColumnWidth}px`;
-    //             });
-    //         }
-    //     };
-
-    //     updateStickyColumns();
-    //     window.addEventListener("resize", updateStickyColumns);
-
-    //     return () => {
-    //         window.removeEventListener("resize", updateStickyColumns);
-    //     };
-    // }, []);
-
+    
     // TASK : Make first 2 columns (i.e. checkbox and task id) sticky
     // TASK : Make header columns resizable
 

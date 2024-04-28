@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { type ColumnDef, Row } from "@tanstack/react-table";
 import { labels, priorities, statuses } from "../_constants/metadata";
 import { type Task } from "../_constants/schema";
-import { CheckboxIcon, BoxIcon } from "@radix-ui/react-icons";
+import { CheckboxIcon } from "@radix-ui/react-icons";
 
 export const columns: Array<ColumnDef<Task>> = [
     {
